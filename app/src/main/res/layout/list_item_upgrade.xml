@@ -6,7 +6,7 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/px_circle"
-        android:backgroundTint="@color/icon_bg"
+        android:backgroundTint="?attr/iconBg"
         android:padding="10dp">
 
         <ImageView
@@ -41,7 +41,7 @@
         android:id="@+id/activate_button"
         android:layout_width="96dp"
         android:layout_height="wrap_content"
-        android:background="@color/accent"
+        android:background="?attr/accent"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="6dp">

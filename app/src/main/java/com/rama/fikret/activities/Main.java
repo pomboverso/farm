@@ -168,7 +168,7 @@ public class Main extends Activity {
         ViewUpdates.setText((TextView) ascendDialog.findViewById(R.id.ascend_gain),
                 "+" + NumberFormatter.number(gain));
         ViewUpdates.setBackgroundColor(ascendDialog.findViewById(R.id.ascend_confirm),
-                getResources().getColor(gain > 0 ? R.color.accent : R.color.disabled));
+                getResources().getColor(gain > 0 ? R.attr.accent : R.color.disabled));
     }
 
     private Intent comingSoon(int titleRes) {
@@ -227,7 +227,7 @@ public class Main extends Activity {
         ViewUpdates.setText((TextView) row.findViewById(R.id.buy_label), label);
         ViewUpdates.setText((TextView) row.findViewById(R.id.buy_cost), NumberFormatter.money(w, quote.cost));
         ViewUpdates.setBackgroundColor(row.findViewById(R.id.buy_button),
-                getResources().getColor(affordable ? R.color.btn_bg : R.color.disabled));
+                getResources().getColor(affordable ? R.attr.btnBg : R.color.disabled));
     }
 
     private final class GardenAdapter extends BaseAdapter {

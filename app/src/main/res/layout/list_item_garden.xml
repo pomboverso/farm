@@ -16,7 +16,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:background="@drawable/px_circle"
-            android:backgroundTint="@color/icon_bg"
+            android:backgroundTint="?attr/iconBg"
             android:padding="16dp">
 
             <ImageView
@@ -106,7 +106,7 @@
                 android:layout_width="52dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:background="@color/time_bg" />
+                android:background="?attr/timeBg" />
         </LinearLayout>
     </LinearLayout>
 

@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--
-      One colour set per farm for the coin and the supervisor vectors. They are applied as a theme
-      overlay (see FarmArt), so the drawables never carry a fixed colour. Lake is the original art;
-      Forest and Volcano are placeholder palettes to be tuned.
-    -->
     <style name="Farm_Lake">
         <item name="coinBase">#f1ae20</item>
         <item name="coinOutline">#d88f04</item>
@@ -17,6 +12,13 @@
         <item name="supervisorFeet">#652e03</item>
         <item name="supervisorLight">#f4eece</item>
         <item name="supervisorShade">#d0b16c</item>
+
+        <item name="iconBg">#6181ac</item>
+        <item name="progressBg">#4b5775</item>
+        <item name="progressFill">#69b680</item>
+        <item name="accent">#88a3e5</item>
+        <item name="btnBg">#d4d66c</item>
+        <item name="timeBg">#405080</item>
     </style>
 
     <style name="Farm_Forest">
@@ -31,6 +33,13 @@
         <item name="supervisorFeet">#4b3203</item>
         <item name="supervisorLight">#d7efc4</item>
         <item name="supervisorShade">#6aa84f</item>
+
+        <item name="iconBg">#6181ac</item>
+        <item name="progressBg">#4b5775</item>
+        <item name="progressFill">#69b680</item>
+        <item name="accent">#88a3e5</item>
+        <item name="btnBg">#d4d66c</item>
+        <item name="timeBg">#405080</item>
     </style>
 
     <style name="Farm_Volcano">
@@ -45,5 +54,12 @@
         <item name="supervisorFeet">#3d1303</item>
         <item name="supervisorLight">#f4cec3</item>
         <item name="supervisorShade">#b8654f</item>
+
+        <item name="iconBg">#6181ac</item>
+        <item name="progressBg">#4b5775</item>
+        <item name="progressFill">#69b680</item>
+        <item name="accent">#88a3e5</item>
+        <item name="btnBg">#d4d66c</item>
+        <item name="timeBg">#405080</item>
     </style>
 </resources>

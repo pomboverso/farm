@@ -204,6 +204,6 @@ public class ManagersActivity extends ListScreenActivity {
         ViewUpdates.setText(costView, costLabel);
         setCoin(costView, coin);
         ViewUpdates.setBackgroundColor(row.findViewById(R.id.rescue_button),
-                getResources().getColor(affordable ? R.color.accent : R.color.disabled));
+                getResources().getColor(affordable ? R.attr.accent : R.color.disabled));
     }
 }

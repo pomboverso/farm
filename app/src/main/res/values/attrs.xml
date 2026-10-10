@@ -3,7 +3,6 @@
     <attr name="text" format="string" />
     <attr name="icon" format="reference" />
 
-    <!-- Colours of the farm art (coin.xml, supervisor.xml). Each farm sets them through a Farm_* style. -->
     <attr name="coinBase" format="color" />
     <attr name="coinOutline" format="color" />
     <attr name="coinLight" format="color" />
@@ -15,6 +14,12 @@
     <attr name="supervisorFeet" format="color" />
     <attr name="supervisorLight" format="color" />
     <attr name="supervisorShade" format="color" />
+    <attr name="iconBg" format="color" />
+    <attr name="progressBg"/>
+    <attr name="progressFill"/>
+    <attr name="accent"/>
+    <attr name="btnBg"/>
+    <attr name="timeBg"/>
 
     <declare-styleable name="WdCollapsibleSection">
         <attr name="header" format="string" />
