@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text">#CDD6F4</color>
+    <color name="base">#1E1E2E</color>
+
+    <!-- Surfaces -->
+    <color name="surface_0">#45475A</color>
+    <color name="surface_1">#585B71</color>
+
+    <!-- Text -->
+    <color name="disabled">#585B70</color>
+
+    <!-- Semantic -->
+    <color name="success">#A6E3A2</color>
+    <color name="warning">#FFD701</color>
+    <color name="error">#F38BA9</color>
+    <color name="info">#89DCEB</color>
+
+    <!-- Links -->
+    <color name="link">#89DCEC</color>
+
+<!--    <color name="base_farm">#495e92</color>-->
+    <color name="progress_bg">#4b5775</color>
+    <color name="progress_fill">#69b680</color>
+    <color name="accent">#88a3e5</color>
+    <color name="time_bg">#405080</color>
+    <color name="icon_bg">#6181ac</color>
+</resources>

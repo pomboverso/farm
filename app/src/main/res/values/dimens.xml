@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_between_elements">8dp</dimen>
+    <dimen name="space_between_elements_small">2dp</dimen>
+    <dimen name="h1">32sp</dimen>
+    <dimen name="h2">24sp</dimen>
+    <dimen name="h3">18sp</dimen>
+    <dimen name="text">16sp</dimen>
+    <dimen name="small">12sp</dimen>
+
+    <dimen name="hud_box_size">44dp</dimen>
+    <dimen name="hud_box_icon_size">26dp</dimen>
+    <dimen name="hud_display_height">36dp</dimen>
+    <dimen name="hud_label_text_size">10sp</dimen>
+    <dimen name="hud_display_text_size">14sp</dimen>
+</resources>

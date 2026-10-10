@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="34dp"
+    android:viewportWidth="10.583"
+    android:viewportHeight="8.996">
+    <path
+        android:fillColor="?attr/supervisorOutline"
+        android:pathData="m5.292,1.058v0.529L2.117,1.587v0.529L1.587,2.117v0.529L1.058,2.646v2.646L1.587,5.292v0.529h0.529v0.529h0.529v0.529h0.529v1.058h1.058v-0.529L3.704,7.408v-0.529h1.058v1.058h1.058v-0.529L5.292,7.408v-0.529h1.058v-0.529h0.529v-0.529h0.529v-0.529h0.529v-1.058h1.058v-0.529h0.529v-0.529L8.996,3.175v-0.529L8.467,2.646v-0.529L7.938,2.117v-0.529L7.408,1.587v-0.529z" />
+    <path
+        android:fillColor="?attr/supervisorBody"
+        android:pathData="m5.292,1.587v0.529L2.117,2.117v0.529L1.587,2.646v2.646h0.529v0.529h0.529v0.529h3.704v-0.529h0.529v-0.529h0.529v-0.529,-0.529h0.529v-2.117L7.408,2.117v-0.529zM6.35,2.646h0.529v0.529L6.35,3.175Z" />
+    <path
+        android:fillColor="?attr/supervisorBeak"
+        android:pathData="m7.938,2.646v1.058h1.058v-0.529L8.467,3.175v-0.529z" />
+    <path
+        android:fillColor="?attr/supervisorFeet"
+        android:pathData="m3.175,6.879v1.058h1.058v-0.529L3.704,7.408v-0.529zM4.762,6.879v1.058h1.058v-0.529L5.292,7.408v-0.529z" />
+    <path
+        android:fillColor="?attr/supervisorLight"
+        android:pathData="m2.117,2.117v0.529L1.587,2.646v1.058h0.529v-0.529h0.529v-0.529h1.587v-0.529z" />
+    <path
+        android:fillColor="?attr/supervisorShade"
+        android:pathData="m6.35,4.763v0.529L5.821,5.292v0.529L4.762,5.821v0.529h1.587v-0.529h0.529v-0.529h0.529v-0.529z" />
+</vector>
