@@ -11,8 +11,6 @@
 
     <string name="license_gpl3" translatable="false">GPL 3.0</string>
 
-
-
     <string name="menu_map">Map</string>
     <string name="menu_managers">Supervisor</string>
     <string name="menu_upgrades">Upgrades</string>
@@ -23,7 +21,6 @@
     <string name="ascend_warning">Ascending restarts the lake: money, gardens, supervisors, discount managers and upgrades are lost. Lake points, accountants and guide birds stay.</string>
     <string name="ascend_confirm">Ascend</string>
     <string name="cancel">Cancel</string>
-    <string name="menu_achievements">Achievements</string>
     <string name="menu_teleport">Teleport</string>
     <string name="coming_soon">Coming soon</string>
     <string name="rescue">Rescue</string>

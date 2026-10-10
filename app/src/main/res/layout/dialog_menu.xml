@@ -28,13 +28,6 @@
         style="@style/BTN"
         android:text="@string/menu_ascend" />
 
-    <View style="@style/SeparatorListVertical" />
-
-    <TextView
-        android:id="@+id/menu_achievements"
-        style="@style/BTN"
-        android:text="@string/menu_achievements" />
-
     <View
         android:id="@+id/menu_teleport_gap"
         style="@style/SeparatorListVertical" />

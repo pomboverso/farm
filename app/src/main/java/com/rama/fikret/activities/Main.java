@@ -116,7 +116,6 @@ public class Main extends Activity {
             dialog.dismiss();
             showAscend();
         });
-        bindMenuItem(dialog, content, R.id.menu_achievements, comingSoon(R.string.menu_achievements));
         bindMenuItem(dialog, content, R.id.menu_teleport, new Intent(this, TeleportActivity.class));
 
         boolean teleportAvailable = DeveloperMode.ENABLED
@@ -228,7 +227,7 @@ public class Main extends Activity {
         ViewUpdates.setText((TextView) row.findViewById(R.id.buy_label), label);
         ViewUpdates.setText((TextView) row.findViewById(R.id.buy_cost), NumberFormatter.money(w, quote.cost));
         ViewUpdates.setBackgroundColor(row.findViewById(R.id.buy_button),
-                getResources().getColor(affordable ? R.color.accent : R.color.disabled));
+                getResources().getColor(affordable ? R.color.btn_bg : R.color.disabled));
     }
 
     private final class GardenAdapter extends BaseAdapter {
