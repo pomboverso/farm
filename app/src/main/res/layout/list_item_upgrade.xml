@@ -32,7 +32,7 @@
         <TextView
             android:id="@+id/upgrade_description"
             style="@style/Text"
-            android:textColor="@color/disabled" />
+            android:textColor="@color/subtle" />
     </LinearLayout>
 
     <View style="@style/SeparatorListHorizontal" />

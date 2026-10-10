@@ -121,6 +121,6 @@ public class UpgradesActivity extends ListScreenActivity {
         boolean available = state.upgradeLevel(world, g, type) == tier && state.getCount(world, g) > 0;
         boolean affordable = available && state.getMoney(world) >= cost;
         ViewUpdates.setBackgroundColor(row.findViewById(R.id.activate_button),
-                getResources().getColor(affordable ? R.attr.accent : R.color.disabled));
+                affordable ? ViewUpdates.themeColor(this, R.attr.accent) : getResources().getColor(R.color.disabled, getTheme()));
     }
 }

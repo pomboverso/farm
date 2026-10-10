@@ -29,4 +29,14 @@ public final class ViewUpdates {
         view.setTag(com.rama.fikret.R.id.last_background, color);
         view.setBackgroundColor(color);
     }
+
+    public static int themeColor(android.content.Context context, int attrOrColorRes) {
+        android.util.TypedValue tv = new android.util.TypedValue();
+        if (context.getTheme().resolveAttribute(attrOrColorRes, tv, true)
+                && tv.type >= android.util.TypedValue.TYPE_FIRST_COLOR_INT
+                && tv.type <= android.util.TypedValue.TYPE_LAST_COLOR_INT) {
+            return tv.data;
+        }
+        return context.getResources().getColor(attrOrColorRes, context.getTheme());
+    }
 }

@@ -4,6 +4,12 @@
     <style name="Theme.Fikret" parent="@android:style/Theme.Black.NoTitleBar">
         <item name="android:windowBackground">@color/base</item>
         <item name="android:textColor">@color/text</item>
+        <item name="iconBg">#6181ac</item>
+        <item name="progressBg">#4b5775</item>
+        <item name="progressFill">#69b680</item>
+        <item name="accent">#88a3e5</item>
+        <item name="btnBg">#d4d66c</item>
+        <item name="timeBg">#405080</item>
     </style>
 
     <style name="AppDialog" parent="@android:style/Theme.Dialog">
@@ -12,6 +18,12 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentTransitions">false</item>
+        <item name="iconBg">#6181ac</item>
+        <item name="progressBg">#4b5775</item>
+        <item name="progressFill">#69b680</item>
+        <item name="accent">#88a3e5</item>
+        <item name="btnBg">#d4d66c</item>
+        <item name="timeBg">#405080</item>
     </style>
 
     <style name="Dialog_Root" parent="VerticalList">

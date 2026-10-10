@@ -9,6 +9,7 @@
 
     <!-- Text -->
     <color name="disabled">#585B70</color>
+    <color name="subtle">#8090B0</color>
 
     <!-- Semantic -->
     <color name="success">#A6E3A2</color>

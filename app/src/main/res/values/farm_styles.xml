@@ -13,12 +13,12 @@
         <item name="supervisorLight">#f4eece</item>
         <item name="supervisorShade">#d0b16c</item>
 
-        <item name="iconBg">#6181ac</item>
-        <item name="progressBg">#4b5775</item>
-        <item name="progressFill">#69b680</item>
-        <item name="accent">#88a3e5</item>
-        <item name="btnBg">#d4d66c</item>
-        <item name="timeBg">#405080</item>
+        <item name="iconBg">#68A</item>
+        <item name="progressBg">#457</item>
+        <item name="progressFill">#6B8</item>
+        <item name="accent">#8AE</item>
+        <item name="btnBg">#DD6</item>
+        <item name="timeBg">#458</item>
     </style>
 
     <style name="Farm_Forest">
@@ -34,12 +34,12 @@
         <item name="supervisorLight">#d7efc4</item>
         <item name="supervisorShade">#6aa84f</item>
 
-        <item name="iconBg">#6181ac</item>
-        <item name="progressBg">#4b5775</item>
-        <item name="progressFill">#69b680</item>
-        <item name="accent">#88a3e5</item>
-        <item name="btnBg">#d4d66c</item>
-        <item name="timeBg">#405080</item>
+        <item name="iconBg">#68A</item>
+        <item name="progressBg">#457</item>
+        <item name="progressFill">#6B8</item>
+        <item name="accent">#8AE</item>
+        <item name="btnBg">#DD6</item>
+        <item name="timeBg">#458</item>
     </style>
 
     <style name="Farm_Volcano">
@@ -55,11 +55,11 @@
         <item name="supervisorLight">#f4cec3</item>
         <item name="supervisorShade">#b8654f</item>
 
-        <item name="iconBg">#6181ac</item>
-        <item name="progressBg">#4b5775</item>
-        <item name="progressFill">#69b680</item>
-        <item name="accent">#88a3e5</item>
-        <item name="btnBg">#d4d66c</item>
-        <item name="timeBg">#405080</item>
+        <item name="iconBg">#68A</item>
+        <item name="progressBg">#457</item>
+        <item name="progressFill">#6B8</item>
+        <item name="accent">#8AE</item>
+        <item name="btnBg">#DD6</item>
+        <item name="timeBg">#458</item>
     </style>
 </resources>
