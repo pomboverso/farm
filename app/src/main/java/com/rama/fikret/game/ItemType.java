@@ -27,13 +27,13 @@ public enum ItemType {
     ALIEN_STONE_3(35, 1, 8, true),
     ALIEN_STONE_4(36, 1, 9, true),
 
-    // column 3
-    LAVA_STONES_03(26, 3, 0, false),
-    LILYPOND_01(27, 3, 1, false),
-    LILYPOND_02(28, 3, 2, false),
-    WALL_SPACE(32, 3, 3, true),
-    WALL_BUBBLEGUM(37, 3, 4, true),
-    BUBBLEGUM_WAVE(38, 3, 5, false),
+    // column 2
+    LAVA_STONES_03(26, 2, 0, false),
+    LILYPOND_01(27, 2, 1, false),
+    LILYPOND_02(28, 2, 2, false),
+    WALL_SPACE(32, 2, 3, true),
+    WALL_BUBBLEGUM(37, 2, 4, true),
+    BUBBLEGUM_WAVE(38, 2, 5, false),
 
     // share a cell with another item
     HOLE_DOWN_NEST(13, 0, 0, false),
@@ -47,7 +47,7 @@ public enum ItemType {
     DIVE_TO_BEACH_CAVE(30, -1, -1, false),
     DIVE_TO_BEACH(31, -1, -1, false);
 
-    public static final int SHEET_COLUMNS = 4;
+    public static final int SHEET_COLUMNS = 3;
     public static final int SHEET_ROWS = 10;
 
     public final int id;
