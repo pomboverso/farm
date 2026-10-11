@@ -1,14 +1,9 @@
 package com.rama.fikret.game;
 
-import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 
-import com.rama.fikret.R;
-
 public class Bird {
-    private static final int ATLAS_COLUMNS = 2;
-    private static final int ATLAS_ROWS = 4;
     private static final long STEP_DURATION_MS = 200;
     private static final long WALK_FRAME_DURATION_MS = 80;
 
@@ -32,8 +27,9 @@ public class Bird {
     private boolean walkToggle = false;
     private long walkAnimTimer = 0;
 
-    public Bird(Resources res, int startRow, int startCol) {
-        this.spriteSheet = new SpriteSheet(res, R.drawable.bird, ATLAS_COLUMNS, ATLAS_ROWS);
+    /** The sheet comes from {@link BirdSheets#forWorld}, so each farm's supervisors wear that farm's colours. */
+    public Bird(SpriteSheet spriteSheet, int startRow, int startCol) {
+        this.spriteSheet = spriteSheet;
         this.row = this.fromRow = startRow;
         this.col = this.fromCol = startCol;
     }

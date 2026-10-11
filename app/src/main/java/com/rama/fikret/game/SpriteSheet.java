@@ -16,7 +16,7 @@ public class SpriteSheet {
         this(decode(res, resId), columns, rows);
     }
 
-    private SpriteSheet(Bitmap bitmap, int columns, int rows) {
+    public SpriteSheet(Bitmap bitmap, int columns, int rows) {
         this.bitmap = bitmap;
         this.columns = columns;
         this.rows = rows;

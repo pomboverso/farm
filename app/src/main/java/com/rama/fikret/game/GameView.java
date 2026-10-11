@@ -629,6 +629,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    /** Plays the teleport pose for half a second once the goose appears (used when teleporting in from the menu). */
     public void playArrivalAnimation() {
         pendingArrival = true;
     }
@@ -791,7 +792,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     continue;
                 }
                 int[] spot = spots.remove(random.nextInt(spots.size()));
-                Bird bird = new Bird(getResources(), spot[0], spot[1]);
+                Bird bird = new Bird(BirdSheets.forWorld(getContext(), worldIndex), spot[0], spot[1]);
                 bird.setSwimming(map.getCell(spot[0], spot[1]).isLiquid());
                 managerBirds.add(bird);
             }
@@ -809,7 +810,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 spot = new int[]{goose.getRow(), goose.getCol()};
             }
             used.add(spot);
-            Bird bird = new Bird(getResources(), spot[0], spot[1]);
+            Bird bird = new Bird(BirdSheets.forWorld(getContext(), w), spot[0], spot[1]);
             bird.startFollowing();
             guideBirds.add(bird);
             guideChase.add(new int[]{goose.getRow(), goose.getCol()});

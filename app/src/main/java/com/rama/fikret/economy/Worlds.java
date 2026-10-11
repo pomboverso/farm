@@ -165,6 +165,14 @@ public final class Worlds {
         return result;
     }
 
+    /**
+     * Same ladder as the Lake, bent three ways per farm:
+     * - currencyScale multiplies every cost and revenue, so a strong currency (euro) deals in small
+     *   amounts and a weak one (rupiah, dong) in big ones. It also scales the starting money.
+     * - timeScale stretches every cycle after the first garden.
+     * - coefficientOffset raises every cost coefficient after the first garden.
+     * The first garden keeps the Lake's cycle time and coefficient so every farm starts the same way.
+     */
     private static GardenDef[] buildFromLake(String[] names, double currencyScale,
                                              double timeScale, double coefficientOffset) {
         double[][] numbers = new double[GARDENS_PER_WORLD][];

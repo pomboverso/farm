@@ -13,6 +13,7 @@ import com.rama.fikret.managers.PrefsManager;
 
 public class GameActivity extends Activity {
     public static final String EXTRA_STAGE = "stage";
+    /** Set by the teleport menu so the goose plays its teleport pose on arrival. */
     public static final String EXTRA_TELEPORT_ARRIVAL = "teleport_arrival";
 
     private GameView gameView;
