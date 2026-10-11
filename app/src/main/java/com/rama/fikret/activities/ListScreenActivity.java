@@ -62,7 +62,7 @@ public abstract class ListScreenActivity extends Activity {
         list = findViewById(R.id.list);
 
         TextView title = findViewById(R.id.title);
-        title.setText(FontManager.sanitizeForFont(screenTitle()));
+        title.setText(screenTitle());
 
         findViewById(R.id.back).setOnClickListener(v -> finish());
 

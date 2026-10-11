@@ -13,7 +13,6 @@ import com.rama.fikret.economy.NumberFormatter;
 import com.rama.fikret.economy.Worlds;
 import com.rama.fikret.helpers.GardenIcons;
 import com.rama.fikret.helpers.ViewUpdates;
-import com.rama.fikret.managers.FontManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -109,11 +108,11 @@ public class UpgradesActivity extends ListScreenActivity {
                 GardenIcons.forGarden(world, g));
         boolean speed = type == GameState.UPGRADE_SPEED;
         ViewUpdates.setText((TextView) row.findViewById(R.id.garden_name),
-                FontManager.sanitizeForFont(garden + (speed ? " Speed x2" : " Value x2")));
+                garden + (speed ? " Speed x2" : " Value x2"));
         ViewUpdates.setText((TextView) row.findViewById(R.id.upgrade_description),
-                FontManager.sanitizeForFont(speed
+                speed
                         ? "Doubles how fast " + garden + " harvests."
-                        : "Doubles how much " + garden + " earns."));
+                        : "Doubles how much " + garden + " earns.");
 
         double cost = state.upgradeCostAt(world, g, type, tier);
         ViewUpdates.setText((TextView) row.findViewById(R.id.activate_cost), NumberFormatter.money(world, cost));

@@ -127,16 +127,16 @@ public final class Worlds {
             "Kepel", "Matoa", "Duwet", "Gandaria", "Kemang"
     };
 
-    // China: 杨梅, 枣, 猕猴桃, 五味子, 山楂, 黄皮, 悬钩子, 野梨, 柿, 酸枣
+    // China
     private static final String[] NUCLEAR_NAMES = {
-            "Yángméi", "Zǎo", "Míhóutáo", "Wǔwèizǐ", "Shānzhā",
-            "Huángpí", "Xuángōuzi", "Yělí", "Shì", "Suānzǎo"
+            "杨梅", "枣", "猕猴桃", "五味子", "山楂",
+            "黄皮", "悬钩子", "野梨", "柿", "酸枣"
     };
 
-    // Russia: Морошка, Брусника, Черника, Голубика, Водяника, Княженика, Костяника, Жимолость, Рябина, Шиповник
+    // Russia
     private static final String[] ARCTIC_NAMES = {
-            "Moroshka", "Brusnika", "Chernika", "Golubika", "Vodyanika",
-            "Knyazhenika", "Kostyanika", "Zhimolost", "Ryabina", "Shipovnik"
+            "Морошка", "Брусника", "Черника", "Голубика", "Водяника",
+            "Княженика", "Костяника", "Жимолость", "Рябина", "Шиповник"
     };
 
     // Bahamas
@@ -145,10 +145,10 @@ public final class Worlds {
             "Sea grape", "Saffron plum", "Andros wild guava", "Sapodilla", "Sugar apple"
     };
 
-    // Japan: アケビ, サルナシ, ヤマブドウ, シークヮーサー, スダチ, カボス, ユズ, ヤマモモ, ムベ, ハスカップ
+    // Japan
     private static final String[] SPACE_NAMES = {
-            "Akebi", "Sarunashi", "Yamabudō", "Shīkwāsā", "Sudachi",
-            "Kabosu", "Yuzu", "Yamamomo", "Mube", "Haskappu"
+            "アケビ", "サルナシ", "ヤマブドウ", "シークヮーサー", "スダチ",
+            "カボス", "ユズ", "ヤマモモ", "ムベ", "ハスカップ"
     };
 
     // Spain

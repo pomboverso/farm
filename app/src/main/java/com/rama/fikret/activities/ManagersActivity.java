@@ -12,7 +12,6 @@ import com.rama.fikret.economy.NumberFormatter;
 import com.rama.fikret.economy.Worlds;
 import com.rama.fikret.helpers.FarmArt;
 import com.rama.fikret.helpers.ViewUpdates;
-import com.rama.fikret.managers.FontManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -197,8 +196,8 @@ public class ManagersActivity extends ListScreenActivity {
             }
         }
 
-        ViewUpdates.setText((TextView) row.findViewById(R.id.manager_name), FontManager.sanitizeForFont(name));
-        ViewUpdates.setText((TextView) row.findViewById(R.id.manager_description), FontManager.sanitizeForFont(description));
+        ViewUpdates.setText((TextView) row.findViewById(R.id.manager_name), name);
+        ViewUpdates.setText((TextView) row.findViewById(R.id.manager_description), description);
         ViewUpdates.setText((TextView) row.findViewById(R.id.rescue_label), getString(R.string.rescue));
         TextView costView = (TextView) row.findViewById(R.id.rescue_cost);
         ViewUpdates.setText(costView, costLabel);

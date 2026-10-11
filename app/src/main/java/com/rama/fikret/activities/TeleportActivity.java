@@ -11,7 +11,6 @@ import com.rama.fikret.R;
 import com.rama.fikret.economy.Worlds;
 import com.rama.fikret.game.Maps;
 import com.rama.fikret.game.Stage;
-import com.rama.fikret.managers.FontManager;
 import com.rama.fikret.managers.PrefsManager;
 
 public class TeleportActivity extends ListScreenActivity {
@@ -53,7 +52,7 @@ public class TeleportActivity extends ListScreenActivity {
                     applyFont(row);
                 }
                 final int stageId = Worlds.ALL_STAGE_IDS[position];
-                row.setText(FontManager.sanitizeForFont(Worlds.stageName(stageId)));
+                row.setText(Worlds.stageName(stageId));
                 row.setOnClickListener(v -> teleportTo(stageId));
                 return row;
             }

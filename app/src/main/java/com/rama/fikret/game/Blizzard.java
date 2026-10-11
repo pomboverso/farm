@@ -1,28 +1,43 @@
 package com.rama.fikret.game;
 
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Rect;
 
-import com.rama.fikret.R;
+import java.util.Random;
 
 public class Blizzard {
     private static final float SPEED_X = 200f;
     private static final float SPEED_Y = 100f;
 
-    private final Bitmap bitmap;
-    private final int tileSize;
+    private static final int FLAKE_PX = 8;          // on-screen size of one flake, in device pixels
+    private static final int GRID = 96;             // flakes per tile side (tile = 96 * 8 = 768 px)
+    private static final int BLOCK = 6;             // the grid is split into 6x6 blocks...
+    private static final float SECOND_FLAKE = 0.7f; // ...with one flake each and a 70% chance of a second
+
+    private final Bitmap flakes;
+    private final int tileSize = GRID * FLAKE_PX;
     private final Paint paint = new Paint();
+    private final Rect dst = new Rect();
     private float offsetX;
     private float offsetY;
 
-    public Blizzard(Resources res) {
-        BitmapFactory.Options opts = new BitmapFactory.Options();
-        opts.inScaled = false;
-        bitmap = BitmapFactory.decodeResource(res, R.drawable.blizzard, opts);
-        tileSize = bitmap.getWidth();
+    public Blizzard() {
+        int[] pixels = new int[GRID * GRID];
+        Random random = new Random();
+        for (int by = 0; by < GRID; by += BLOCK) {
+            for (int bx = 0; bx < GRID; bx += BLOCK) {
+                int count = random.nextFloat() < SECOND_FLAKE ? 2 : 1;
+                for (int i = 0; i < count; i++) {
+                    int x = bx + random.nextInt(BLOCK);
+                    int y = by + random.nextInt(BLOCK);
+                    pixels[y * GRID + x] = 0xFFFFFFFF;
+                }
+            }
+        }
+        flakes = Bitmap.createBitmap(GRID, GRID, Bitmap.Config.ARGB_8888);
+        flakes.setPixels(pixels, 0, GRID, 0, 0, GRID, GRID);
         paint.setFilterBitmap(false);
     }
 
@@ -42,7 +57,8 @@ public class Blizzard {
         int startY = (int) offsetY - tileSize;
         for (int x = startX; x < width; x += tileSize) {
             for (int y = startY; y < height; y += tileSize) {
-                canvas.drawBitmap(bitmap, x, y, paint);
+                dst.set(x, y, x + tileSize, y + tileSize);
+                canvas.drawBitmap(flakes, null, dst, paint);
             }
         }
     }

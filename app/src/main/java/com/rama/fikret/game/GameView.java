@@ -139,7 +139,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         float density = getResources().getDisplayMetrics().density;
         tapSlopPx = TAP_SLOP_DP * density;
         joystick = new SwipeJoystick(density);
-        blizzard = new Blizzard(getResources());
+        blizzard = new Blizzard();
 
         if (Build.VERSION.SDK_INT >= 8) {
             pinchZoomDetector = new PinchZoomDetector(context, new PinchZoomDetector.Listener() {
@@ -798,19 +798,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             }
         }
 
-        // Guide birds come along from every farm (caves and nests too), right next to the goose.
-        List<int[]> used = new ArrayList<>();
-        used.add(new int[]{goose.getRow(), goose.getCol()});
         for (int w = 0; w < Worlds.ALL.length; w++) {
             if (!state.hasTravelManager(w)) {
                 continue;
             }
-            int[] spot = findFreeSpotNear(goose.getRow(), goose.getCol(), used);
-            if (spot == null) {
-                spot = new int[]{goose.getRow(), goose.getCol()};
-            }
-            used.add(spot);
-            Bird bird = new Bird(BirdSheets.forWorld(getContext(), w), spot[0], spot[1]);
+            Bird bird = new Bird(BirdSheets.forWorld(getContext(), w), goose.getRow(), goose.getCol());
             bird.startFollowing();
             guideBirds.add(bird);
             guideChase.add(new int[]{goose.getRow(), goose.getCol()});
@@ -843,37 +835,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             }
         }
         return null;
-    }
-
-    private int[] findFreeSpotNear(int row, int col, List<int[]> used) {
-        int maxRadius = Math.max(map.getRows(), map.getCols());
-        for (int radius = 1; radius <= maxRadius; radius++) {
-            for (int dr = -radius; dr <= radius; dr++) {
-                for (int dc = -radius; dc <= radius; dc++) {
-                    if (Math.max(Math.abs(dr), Math.abs(dc)) != radius) {
-                        continue;
-                    }
-                    int r = row + dr;
-                    int c = col + dc;
-                    MapCell cell = map.getCell(r, c);
-                    if (cell == null || cell.hasItem() || cell.isLiquid() || isUsed(used, r, c)) {
-                        continue;
-                    }
-                    return new int[]{r, c};
-                }
-            }
-        }
-        return null;
-    }
-
-    private static boolean isUsed(List<int[]> used, int r, int c) {
-        for (int i = 0; i < used.size(); i++) {
-            int[] u = used.get(i);
-            if (u[0] == r && u[1] == c) {
-                return true;
-            }
-        }
-        return false;
     }
 
     private void updateGuideBirds(long deltaMs) {
