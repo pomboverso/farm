@@ -45,10 +45,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private static final float SONAR_ECHO_GAP = 1f;
     private static final int SONAR_RINGS = 1;
     private static final long TELEPORT_PHASE_MS = 200;
+    private static final long ARRIVAL_POSE_MS = 500;
     private static final long CAMERA_GLIDE_MIN_MS = 250;
     private static final long CAMERA_GLIDE_MAX_MS = 600;
     private static final float CAMERA_GLIDE_SPEED = 4f;
-    private enum TeleportKind { HOME }
+    private enum TeleportKind { HOME, ARRIVE }
+    private boolean pendingArrival;
     private TeleportKind teleportKind;
     private boolean teleportArrived;
     private long teleportTimerMs;
@@ -193,6 +195,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             }
             goose = new Goose(getResources(), row, col);
             placeBirds();
+            if (pendingArrival) {
+                pendingArrival = false;
+                startArrival();
+            }
         }
         holeGooseRow = goose.getRow();
         holeGooseCol = goose.getCol();
@@ -623,6 +629,17 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
+    public void playArrivalAnimation() {
+        pendingArrival = true;
+    }
+
+    private void startArrival() {
+        teleportKind = TeleportKind.ARRIVE;
+        teleportArrived = true;
+        teleportTimerMs = 0;
+        goose.setTeleporting(true);
+    }
+
     private boolean isTeleporting() {
         return teleportKind != null;
     }
@@ -649,7 +666,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             goose.setTeleporting(true);
             return;
         }
-        if (teleportTimerMs >= TELEPORT_PHASE_MS) {
+        long poseMs = teleportKind == TeleportKind.ARRIVE ? ARRIVAL_POSE_MS : TELEPORT_PHASE_MS;
+        if (teleportTimerMs >= poseMs) {
             goose.setTeleporting(false);
             teleportKind = null;
         }

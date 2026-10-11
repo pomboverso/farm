@@ -13,6 +13,7 @@ import com.rama.fikret.managers.PrefsManager;
 
 public class GameActivity extends Activity {
     public static final String EXTRA_STAGE = "stage";
+    public static final String EXTRA_TELEPORT_ARRIVAL = "teleport_arrival";
 
     private GameView gameView;
 
@@ -35,6 +36,10 @@ public class GameActivity extends Activity {
         }
         gameView = new GameView(this, stageId, startPosition);
         gameView.setOnExitListener(() -> runOnUiThread(() -> finish()));
+
+        if (getIntent().getBooleanExtra(EXTRA_TELEPORT_ARRIVAL, false)) {
+            gameView.playArrivalAnimation();
+        }
 
         setContentView(gameView);
         gameView.requestFocus();

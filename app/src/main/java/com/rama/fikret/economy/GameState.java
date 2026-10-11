@@ -70,7 +70,7 @@ public final class GameState {
         prefs = PrefsManager.getInstance(context);
         for (int i = 0; i < worlds.length; i++) {
             worlds[i] = new World();
-            money[i] = Worlds.START_MONEY;
+            money[i] = Worlds.ALL[i].startMoney;
         }
         load();
         if (lastSync <= 0) {
@@ -207,7 +207,7 @@ public final class GameState {
         angels += gain;
         angelsClaimed += gain;
         int w = Worlds.ANGEL_WORLD;
-        money[w] = Worlds.START_MONEY;
+        money[w] = Worlds.ALL[w].startMoney;
         for (Garden garden : worlds[w].gardens) {
             garden.count = 0;
             garden.manager = false;

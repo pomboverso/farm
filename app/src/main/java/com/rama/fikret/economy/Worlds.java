@@ -72,10 +72,13 @@ public final class Worlds {
         public final double[] accountantCosts;
         public final double[] discountCosts;
         public final boolean placeholderPrices;
+        public final double startMoney;
 
         WorldDef(int stageId, String name, String currency, GardenDef[] gardens,
                  double[] managerCosts, double travelManagerCost,
-                 double[] accountantCosts, double[] discountCosts, boolean placeholderPrices) {
+                 double[] accountantCosts, double[] discountCosts, boolean placeholderPrices,
+                 double startMoney) {
+            this.startMoney = startMoney;
             this.stageId = stageId;
             this.name = name;
             this.currency = currency;
@@ -162,42 +165,61 @@ public final class Worlds {
         return result;
     }
 
-    private static GardenDef[] buildFromLake(String[] names, double timeScale, double coefficientOffset) {
+    private static GardenDef[] buildFromLake(String[] names, double currencyScale,
+                                             double timeScale, double coefficientOffset) {
         double[][] numbers = new double[GARDENS_PER_WORLD][];
         for (int i = 0; i < GARDENS_PER_WORLD; i++) {
             double[] base = LAKE_NUMBERS[i];
-            numbers[i] = i == 0 ? base.clone() : new double[]{
-                    base[0],
-                    Math.round((base[1] + coefficientOffset) * 10000d) / 10000d,
-                    base[2] * timeScale,
-                    base[3]
-            };
+            double coefficient = i == 0 ? base[1] : Math.round((base[1] + coefficientOffset) * 10000d) / 10000d;
+            double time = i == 0 ? base[2] : base[2] * timeScale;
+            numbers[i] = new double[]{base[0] * currencyScale, coefficient, time, base[3] * currencyScale};
         }
         return build(names, numbers);
     }
+
+    private static double[] scaled(double[] values, double factor) {
+        double[] result = new double[values.length];
+        for (int i = 0; i < values.length; i++) {
+            result[i] = values[i] * factor;
+        }
+        return result;
+    }
+
+    // Currency scale = sqrt(units per USD / units of DOP per USD). Square-rooted because the plain
+    // ratio would make the euro's first garden cost about 0.05, too small to read.
+    // Rates (units per USD): DOP ~63, BRL ~5.0, VND ~26,300, IDR ~17,900, CNY ~6.7, RUB ~85,
+    // BSD 1 (pegged), JPY ~158, EUR ~0.89.
+    private static final double SCALE_BRL = 0.28;
+    private static final double SCALE_VND = 20;
+    private static final double SCALE_IDR = 17;
+    private static final double SCALE_CNY = 0.33;
+    private static final double SCALE_RUB = 1.2;
+    private static final double SCALE_BSD = 0.13;
+    private static final double SCALE_JPY = 1.6;
+    private static final double SCALE_EUR = 0.12;
 
     public static final WorldDef[] ALL = {
             new WorldDef(Maps.BEACH, "Lake", CURRENCY_LAKE,
                     build(LAKE_NAMES, LAKE_NUMBERS),
                     PLACEHOLDER_MANAGER_COSTS, GUIDE_BIRD_COST,
-                    LAKE_ACCOUNTANT_COSTS, LAKE_DISCOUNT_COSTS, false),
+                    LAKE_ACCOUNTANT_COSTS, LAKE_DISCOUNT_COSTS, false, START_MONEY),
             // Farm order below is also the save-file world index: only ever append.
-            farm(Maps.FOREST, "Forest", CURRENCY_FOREST, FOREST_NAMES, 1.1, 0),
-            farm(Maps.CAVE, "Cave", CURRENCY_CAVE, CAVE_NAMES, 1.2, 0),
-            farm(Maps.VOLCANO, "Volcano", CURRENCY_VOLCANO, VOLCANO_NAMES, 1.3, 0.005),
-            farm(Maps.NUCLEAR, "Nuclear", CURRENCY_NUCLEAR, NUCLEAR_NAMES, 1.4, 0.005),
-            farm(Maps.ARCTIC, "Arctic", CURRENCY_ARCTIC, ARCTIC_NAMES, 1.5, 0.01),
-            farm(Maps.BUBBLEGUM_LAND, "Bubblegum land", CURRENCY_BUBBLEGUM, BUBBLEGUM_NAMES, 1.6, 0.01),
-            farm(Maps.SPACE, "Space", CURRENCY_SPACE, SPACE_NAMES, 1.7, 0.015),
-            farm(Maps.NIGHTMARE, "Nightmare", CURRENCY_NIGHTMARE, NIGHTMARE_NAMES, 1.8, 0.02),
+            farm(Maps.FOREST, "Forest", CURRENCY_FOREST, FOREST_NAMES, SCALE_BRL, 1.1, 0),
+            farm(Maps.CAVE, "Cave", CURRENCY_CAVE, CAVE_NAMES, SCALE_VND, 1.2, 0),
+            farm(Maps.VOLCANO, "Volcano", CURRENCY_VOLCANO, VOLCANO_NAMES, SCALE_IDR, 1.3, 0.005),
+            farm(Maps.NUCLEAR, "Nuclear", CURRENCY_NUCLEAR, NUCLEAR_NAMES, SCALE_CNY, 1.4, 0.005),
+            farm(Maps.ARCTIC, "Arctic", CURRENCY_ARCTIC, ARCTIC_NAMES, SCALE_RUB, 1.5, 0.01),
+            farm(Maps.BUBBLEGUM_LAND, "Bubblegum land", CURRENCY_BUBBLEGUM, BUBBLEGUM_NAMES, SCALE_BSD, 1.6, 0.01),
+            farm(Maps.SPACE, "Space", CURRENCY_SPACE, SPACE_NAMES, SCALE_JPY, 1.7, 0.015),
+            farm(Maps.NIGHTMARE, "Nightmare", CURRENCY_NIGHTMARE, NIGHTMARE_NAMES, SCALE_EUR, 1.8, 0.02),
     };
 
     private static WorldDef farm(int stageId, String name, String currency, String[] names,
-                                 double timeScale, double coefficientOffset) {
+                                 double currencyScale, double timeScale, double coefficientOffset) {
         return new WorldDef(stageId, name, currency,
-                buildFromLake(names, timeScale, coefficientOffset),
-                PLACEHOLDER_MANAGER_COSTS, GUIDE_BIRD_COST,
-                null, null, true);
+                buildFromLake(names, currencyScale, timeScale, coefficientOffset),
+                scaled(PLACEHOLDER_MANAGER_COSTS, currencyScale), GUIDE_BIRD_COST * currencyScale,
+                null, null, true, START_MONEY * currencyScale);
     }
 
     private static final double[][][][] UPGRADE_PRICES = buildUpgradePrices();

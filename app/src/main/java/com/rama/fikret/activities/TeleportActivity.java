@@ -63,7 +63,9 @@ public class TeleportActivity extends ListScreenActivity {
     private void teleportTo(int stageId) {
         Stage stage = Maps.get(stageId);
         PrefsManager.getInstance(this).saveTeleportHome(stageId, stage.spawnRow, stage.spawnCol);
-        startActivity(new Intent(this, GameActivity.class));
+        Intent intent = new Intent(this, GameActivity.class);
+        intent.putExtra(GameActivity.EXTRA_TELEPORT_ARRIVAL, true);
+        startActivity(intent);
         finish();
     }
 }
