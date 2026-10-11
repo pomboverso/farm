@@ -3,12 +3,15 @@ package com.rama.fikret.activities;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 
 import com.rama.fikret.economy.GameState;
 import com.rama.fikret.game.GameView;
 import com.rama.fikret.game.Maps;
+import com.rama.fikret.helpers.SystemBars;
 import com.rama.fikret.managers.PrefsManager;
 
 public class GameActivity extends Activity {
@@ -42,7 +45,11 @@ public class GameActivity extends Activity {
             gameView.playArrivalAnimation();
         }
 
-        setContentView(gameView);
+        FrameLayout container = new FrameLayout(this);
+        container.addView(gameView, new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        setContentView(container);
+        SystemBars.applyInsets(container);
         gameView.requestFocus();
     }
 
