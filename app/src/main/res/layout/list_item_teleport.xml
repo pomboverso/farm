@@ -2,7 +2,7 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/teleport_name"
     style="@style/Text"
-    android:background="?attr/accent"
+    android:background="?attr/btnBg"
     android:padding="16dp"
     android:gravity="center"
     android:textColor="@color/base"

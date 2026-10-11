@@ -12,15 +12,32 @@ public final class FarmArt {
     private FarmArt() {
     }
 
-    private static int styleOf(int world) {
+    public static int styleOf(int world) {
         switch (Worlds.ALL[world].stageId) {
             case Maps.FOREST:
                 return R.style.Farm_Forest;
+            case Maps.CAVE:
+                return R.style.Farm_Cave;
             case Maps.VOLCANO:
                 return R.style.Farm_Volcano;
+                return R.style.Farm_Nuclear;
+            case Maps.ARCTIC:
+                return R.style.Farm_Arctic;
+            case Maps.BUBBLEGUM_LAND:
+                return R.style.Farm_Bubblegum;
+            case Maps.SPACE:
+                return R.style.Farm_Space;
+            case Maps.NIGHTMARE:
+                return R.style.Farm_Nightmare;
             default:
                 return R.style.Farm_Lake;
         }
+    }
+
+    public static int applyTheme(android.app.Activity activity, int world) {
+        int style = styleOf(world);
+        activity.getTheme().applyStyle(style, true);
+        return style;
     }
 
     private static Drawable load(Context context, int world, int drawableRes) {

@@ -11,11 +11,13 @@ import android.widget.TextView;
 import com.rama.fikret.R;
 import com.rama.fikret.economy.GameState;
 import com.rama.fikret.economy.NumberFormatter;
+import com.rama.fikret.helpers.FarmArt;
 import com.rama.fikret.helpers.SystemBars;
 import com.rama.fikret.helpers.ViewUpdates;
 import com.rama.fikret.managers.FontManager;
 
 public abstract class ListScreenActivity extends Activity {
+    private int appliedStyle;
     private static final long TICK_MS = 100;
 
     protected GameState state;
@@ -48,12 +50,13 @@ public abstract class ListScreenActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        state = GameState.get(this);
+        appliedStyle = FarmArt.applyTheme(this, state.getCurrentWorld());
         setContentView(R.layout.activity_list);
         View root = findViewById(R.id.root);
         SystemBars.applyInsets(root);
         FontManager.apply(root, FontManager.getJersey25(this));
 
-        state = GameState.get(this);
         world = state.getCurrentWorld();
         moneyText = findViewById(R.id.money);
         list = findViewById(R.id.list);
@@ -71,6 +74,10 @@ public abstract class ListScreenActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        if (FarmArt.styleOf(state.getCurrentWorld()) != appliedStyle) {
+            recreate();
+            return;
+        }
         handler.post(ticker);
     }
 

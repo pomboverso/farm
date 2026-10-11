@@ -34,12 +34,12 @@
         <item name="supervisorLight">#d7efc4</item>
         <item name="supervisorShade">#6aa84f</item>
 
-        <item name="iconBg">#68A</item>
-        <item name="progressBg">#457</item>
-        <item name="progressFill">#6B8</item>
-        <item name="accent">#8AE</item>
+        <item name="iconBg">#6A5</item>
+        <item name="progressBg">#463</item>
+        <item name="progressFill">#9C5</item>
+        <item name="accent">#8D6</item>
         <item name="btnBg">#DD6</item>
-        <item name="timeBg">#458</item>
+        <item name="timeBg">#374</item>
     </style>
 
     <style name="Farm_Volcano">
@@ -55,11 +55,136 @@
         <item name="supervisorLight">#f4cec3</item>
         <item name="supervisorShade">#b8654f</item>
 
-        <item name="iconBg">#68A</item>
-        <item name="progressBg">#457</item>
-        <item name="progressFill">#6B8</item>
-        <item name="accent">#8AE</item>
-        <item name="btnBg">#DD6</item>
-        <item name="timeBg">#458</item>
+        <item name="iconBg">#D74</item>
+        <item name="progressBg">#732</item>
+        <item name="progressFill">#FA3</item>
+        <item name="accent">#F94</item>
+        <item name="btnBg">#FD6</item>
+        <item name="timeBg">#842</item>
+    </style>
+    <style name="Farm_Cave">
+        <item name="coinBase">#c2844f</item>
+        <item name="coinOutline">#a86734</item>
+        <item name="coinLight">#f2e1d3</item>
+        <item name="coinMid">#d8a57a</item>
+        <item name="coinEdge">#b46e34</item>
+        <item name="supervisorOutline">#27232a</item>
+        <item name="supervisorBody">#d6ceb5</item>
+        <item name="supervisorBeak">#ffd01b</item>
+        <item name="supervisorFeet">#652e03</item>
+        <item name="supervisorLight">#ebe4d7</item>
+        <item name="supervisorShade">#ba9d82</item>
+
+        <item name="iconBg">#A86</item>
+        <item name="progressBg">#654</item>
+        <item name="progressFill">#DC8</item>
+        <item name="accent">#CA7</item>
+        <item name="btnBg">#8C9</item>
+        <item name="timeBg">#765</item>
+    </style>
+
+    <style name="Farm_Nuclear">
+        <item name="coinBase">#9bf120</item>
+        <item name="coinOutline">#86d804</item>
+        <item name="coinLight">#e8ffc6</item>
+        <item name="coinMid">#b9fe54</item>
+        <item name="coinEdge">#8ae800</item>
+        <item name="supervisorOutline">#27232a</item>
+        <item name="supervisorBody">#b9e3a8</item>
+        <item name="supervisorBeak">#c88bf0</item>
+        <item name="supervisorFeet">#652e03</item>
+        <item name="supervisorLight">#def4ce</item>
+        <item name="supervisorShade">#a6d06c</item>
+
+        <item name="iconBg">#AD5</item>
+        <item name="progressBg">#563</item>
+        <item name="progressFill">#DF6</item>
+        <item name="accent">#CE7</item>
+        <item name="btnBg">#C8F</item>
+        <item name="timeBg">#572</item>
+    </style>
+
+    <style name="Farm_Arctic">
+        <item name="coinBase">#47b5d9</item>
+        <item name="coinOutline">#21a5cb</item>
+        <item name="coinLight">#dbf2fa</item>
+        <item name="coinMid">#77cfeb</item>
+        <item name="coinEdge">#1facd8</item>
+        <item name="supervisorOutline">#27232a</item>
+        <item name="supervisorBody">#bacbe0</item>
+        <item name="supervisorBeak">#f87b1b</item>
+        <item name="supervisorFeet">#652e03</item>
+        <item name="supervisorLight">#deebf3</item>
+        <item name="supervisorShade">#83b6c8</item>
+
+        <item name="iconBg">#8BC</item>
+        <item name="progressBg">#468</item>
+        <item name="progressFill">#AEE</item>
+        <item name="accent">#BDF</item>
+        <item name="btnBg">#DEF</item>
+        <item name="timeBg">#579</item>
+    </style>
+
+    <style name="Farm_Bubblegum">
+        <item name="coinBase">#f12078</item>
+        <item name="coinOutline">#d80462</item>
+        <item name="coinLight">#ffc6df</item>
+        <item name="coinMid">#fe549d</item>
+        <item name="coinEdge">#e80063</item>
+        <item name="supervisorOutline">#27232a</item>
+        <item name="supervisorBody">#e3a8af</item>
+        <item name="supervisorBeak">#f87b1b</item>
+        <item name="supervisorFeet">#652e03</item>
+        <item name="supervisorLight">#f4ced8</item>
+        <item name="supervisorShade">#d06c95</item>
+
+        <item name="iconBg">#E9B</item>
+        <item name="progressBg">#745</item>
+        <item name="progressFill">#FBD</item>
+        <item name="accent">#FAC</item>
+        <item name="btnBg">#8DE</item>
+        <item name="timeBg">#967</item>
+    </style>
+
+    <style name="Farm_Space">
+        <item name="coinBase">#882ae7</item>
+        <item name="coinOutline">#690fcd</item>
+        <item name="coinLight">#e2c9fc</item>
+        <item name="coinMid">#a75cf6</item>
+        <item name="coinEdge">#720cdc</item>
+        <item name="supervisorOutline">#27232a</item>
+        <item name="supervisorBody">#d5abe0</item>
+        <item name="supervisorBeak">#ffd01b</item>
+        <item name="supervisorFeet">#652e03</item>
+        <item name="supervisorLight">#e6d0f2</item>
+        <item name="supervisorShade">#9f71cb</item>
+
+        <item name="iconBg">#A8D</item>
+        <item name="progressBg">#547</item>
+        <item name="progressFill">#CAF</item>
+        <item name="accent">#BAF</item>
+        <item name="btnBg">#FD8</item>
+        <item name="timeBg">#648</item>
+    </style>
+
+    <style name="Farm_Nightmare">
+        <item name="coinBase">#f12032</item>
+        <item name="coinOutline">#d8041c</item>
+        <item name="coinLight">#ffc6cc</item>
+        <item name="coinMid">#fe5464</item>
+        <item name="coinEdge">#e80016</item>
+        <item name="supervisorOutline">#27232a</item>
+        <item name="supervisorBody">#e3b5a8</item>
+        <item name="supervisorBeak">#ffd01b</item>
+        <item name="supervisorFeet">#652e03</item>
+        <item name="supervisorLight">#f4d1ce</item>
+        <item name="supervisorShade">#d06c74</item>
+
+        <item name="iconBg">#D77</item>
+        <item name="progressBg">#733</item>
+        <item name="progressFill">#F88</item>
+        <item name="accent">#F99</item>
+        <item name="btnBg">#FC8</item>
+        <item name="timeBg">#844</item>
     </style>
 </resources>

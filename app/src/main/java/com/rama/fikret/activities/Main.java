@@ -41,6 +41,7 @@ public class Main extends Activity {
     private BaseAdapter adapter;
     private ListView gardenList;
     private int world = -1;
+    private int appliedStyle;
     private final Handler handler = new Handler();
 
     private final Runnable ticker = new Runnable() {
@@ -55,12 +56,13 @@ public class Main extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        state = GameState.get(this);
+        appliedStyle = FarmArt.applyTheme(this, state.getCurrentWorld());
         setContentView(R.layout.activity_main);
         View root = findViewById(R.id.root);
         SystemBars.applyInsets(root);
         FontManager.apply(root, FontManager.getJersey25(this));
 
-        state = GameState.get(this);
         moneyText = findViewById(R.id.money);
         multiplierButton = findViewById(R.id.multiplier);
 
@@ -78,6 +80,10 @@ public class Main extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        if (FarmArt.styleOf(state.getCurrentWorld()) != appliedStyle) {
+            recreate();
+            return;
+        }
         state.sync();
         handler.post(ticker);
     }
