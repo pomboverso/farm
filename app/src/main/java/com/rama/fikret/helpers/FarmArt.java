@@ -20,6 +20,7 @@ public final class FarmArt {
                 return R.style.Farm_Cave;
             case Maps.VOLCANO:
                 return R.style.Farm_Volcano;
+            case Maps.NUCLEAR:
                 return R.style.Farm_Nuclear;
             case Maps.ARCTIC:
                 return R.style.Farm_Arctic;
