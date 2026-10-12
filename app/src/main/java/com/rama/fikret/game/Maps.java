@@ -40,12 +40,6 @@ public final class Maps {
     static int wall_bubblegum = 37000000;
     static int bubblegum_wave = 38000000;
 
-    static int enemy_blue = 100000000;
-    static int enemy_red = 200000000;
-    static int enemy_purple = 300000000;
-    static int enemy_green = 400000000;
-    static int enemy_boss = 500000000;
-
     static final int GRASS = 1;
     static final int WATER = 2;
     static final int SAND = 3;
