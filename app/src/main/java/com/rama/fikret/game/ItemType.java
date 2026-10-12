@@ -34,6 +34,8 @@ public enum ItemType {
     WALL_SPACE(32, 2, 3, true),
     WALL_BUBBLEGUM(37, 2, 4, true),
     BUBBLEGUM_WAVE(38, 2, 5, false),
+    WALL_ACID(40, 2, 6, true),
+    WALL_BLOOD(41, 2, 7, true),
 
     // share a cell with another item
     HOLE_DOWN_NEST(13, 0, 0, false),

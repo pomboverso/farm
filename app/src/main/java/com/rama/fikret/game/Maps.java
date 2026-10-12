@@ -14,8 +14,10 @@ public final class Maps {
     static int wall_forest = 8000000;
     static int wall_cave = 9000000;
     static int wall_volcano = 10000000;
-    static int wall_old = 12000000;
-    static int hole_down_nest = 13000000;
+
+    static int wall_acid = 40000000;
+    static int wall_blood = 41000000;
+
     static int farm_exit = 39000000;
     static int flower_floor_pink = 14000000;
     static int flower_floor_blue = 15000000;
@@ -648,7 +650,7 @@ public final class Maps {
                 0,
                 0,
                 TOXIC_WALLS,
-                wall_forest,
+                wall_acid,
                 125
         );
 
@@ -943,7 +945,7 @@ public final class Maps {
                 0,
                 0,
                 NIGHTMARE_WALLS,
-                wall_volcano,
+                wall_blood,
                 95, 95170, 95171, 95172, 95173, 95174, 95175, 95176, 95177, 95178, 95179
         );
 
