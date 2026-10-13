@@ -16,7 +16,7 @@
 
         <TextView
             android:id="@+id/name_version"
-            android:textColor="@color/warning"
+            android:textColor="?attr/accent"
             style="@style/H2_Center" />
 
         <View style="@style/SeparatorListHorizontal" />
