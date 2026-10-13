@@ -37,4 +37,12 @@
         style="@style/BTN"
         android:text="@string/menu_teleport" />
 
+    <View
+        style="@style/SeparatorListVertical" />
+
+    <TextView
+        android:id="@+id/menu_about"
+        style="@style/BTN"
+        android:text="About" />
+
 </LinearLayout>

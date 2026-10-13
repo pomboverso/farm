@@ -54,7 +54,7 @@
         <item name="android:textSize">@dimen/h2</item>
     </style>
 
-    <style name="H2_center" parent="H2">
+    <style name="H2_Center" parent="H2">
         <item name="android:gravity">center</item>
     </style>
 
@@ -88,6 +88,7 @@
         <item name="android:background">?attr/btnBg</item>
         <item name="android:gravity">center</item>
     </style>
+
     <style name="BTN_danger" parent="BTN">
         <item name="android:background">@color/error</item>
     </style>

@@ -15,11 +15,11 @@
     <attr name="supervisorLight" format="color" />
     <attr name="supervisorShade" format="color" />
     <attr name="iconBg" format="color" />
-    <attr name="progressBg"/>
-    <attr name="progressFill"/>
-    <attr name="accent"/>
-    <attr name="btnBg"/>
-    <attr name="timeBg"/>
+    <attr name="progressBg" />
+    <attr name="progressFill" />
+    <attr name="accent" />
+    <attr name="btnBg" />
+    <attr name="timeBg" />
 
     <declare-styleable name="WdCollapsibleSection">
         <attr name="header" format="string" />

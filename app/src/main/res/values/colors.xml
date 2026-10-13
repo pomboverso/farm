@@ -19,4 +19,6 @@
 
     <!-- Links -->
     <color name="link">#89DCEC</color>
+
+    <color name="btnBg">#DD6</color>
 </resources>

@@ -98,13 +98,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fikret">
 
-<!--        <activity-->
-<!--            android:name=".activities.About"-->
-<!--            android:exported="false" />-->
-
-<!--        <activity-->
-<!--            android:name=".activities.Settings"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".activities.About"
+            android:exported="false" />
 
         <activity
             android:name=".activities.GameActivity"

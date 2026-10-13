@@ -123,6 +123,7 @@ public class Main extends Activity {
             showAscend();
         });
         bindMenuItem(dialog, content, R.id.menu_teleport, new Intent(this, TeleportActivity.class));
+        bindMenuItem(dialog, content, R.id.menu_about, new Intent(this, About.class));
 
         boolean teleportAvailable = DeveloperMode.ENABLED
                 || PrefsManager.getInstance(this).hasAbility(Ability.TELEPORT_HOME);
